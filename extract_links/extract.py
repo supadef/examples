@@ -1,11 +1,12 @@
 import requests
+from typing import List
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse, urljoin
 from supadef import task
 
 
 @task()
-def extract_links(url):
+def extract_links(url: str) -> List[str]:
     try:
         # Send an HTTP GET request
         response = requests.get(url)
